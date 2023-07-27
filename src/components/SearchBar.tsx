@@ -2,12 +2,14 @@ import { Button, TextField } from "@mui/material"
 import './SearchBar.css';
 import { ChangeEvent, useState } from "react";
 
-interface ISearchBarProps {
-  onSearchClick: (text: string) => void;
+interface SearchBarProps {
+  onSearchClick: (value: string) => void;
+  initialValue?: string;
 }
 
-const SearchBar = ({ onSearchClick }: ISearchBarProps) => {
-  const [text, setText] = useState('');
+const SearchBar = ({ onSearchClick, initialValue = ''}: SearchBarProps) => {
+
+  const [text, setText] = useState(initialValue);
 
   return (
     <div className="search-bar-wrapper">

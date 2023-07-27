@@ -6,12 +6,15 @@ import {
   ListItemAvatar,
   ListItemText,
 } from '@mui/material';
-import { users as usersList } from '../data';
 import { User } from '../models/user.model';
-import React, { useState } from 'react';
+import React  from 'react';
+import { Link } from 'react-router-dom';
 
-const UserList = () => {
-  const [users] = useState(usersList);
+interface UsersListProps {
+  users: User[];
+}
+
+const UserList = ({ users = [] }: UsersListProps) => {
 
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
@@ -23,7 +26,9 @@ const UserList = () => {
                 <Avatar alt={user.name} src="/static/images/avatar/1.jpg">
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary={user.name} secondary={user.jobTitle} />
+              <Link to={`/user-details/${user.id}`}>
+                <ListItemText primary={user.name} secondary={user.jobTitle} />
+              </Link>
             </ListItem>
             <Divider variant="inset" component="li" />
           </React.Fragment>

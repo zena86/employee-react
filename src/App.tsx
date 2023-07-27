@@ -1,21 +1,21 @@
-import { useState } from 'react';
 import './App.css'
-import SearchBar from './components/SearchBar'
-import UserList from './components/UserList'
+import Home from './pages/Home';
+import UserDetails from './pages/UserDetails';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
-  const [searchValue, setSearchValue] = useState('');
-  return (
-    <>
-      <h1>My app</h1>
-      <SearchBar onSearchClick={(x: string) => {
-        setSearchValue(x)
-        }}
-      />
-      <UserList />
-      <h2>{searchValue}</h2>
-    </>
-  )
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Home />,
+    },
+    {
+      path: '/user-details/:userId',
+      element: <UserDetails />,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App
