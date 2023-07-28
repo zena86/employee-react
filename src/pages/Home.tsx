@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar"
 import UserList from "../components/UserList"
 import { users as usersList } from '../data';
 import { User } from "../models/user.model";
+import Header from "../components/Header";
 
 const Home = () => {
   const [searchValue, setSearchValue] = useState('ALEKSANDR');
@@ -10,7 +11,8 @@ const Home = () => {
 
   return (
     <>
-      <SearchBar 
+      <Header />
+      <SearchBar
       initialValue={searchValue}
       onSearchClick={(searchBarValue: string) => {
         setSearchValue(searchBarValue)
