@@ -1,5 +1,5 @@
 import { Button, TextField } from "@mui/material"
-import './SearchBar.css';
+import styles from'./SearchBar.module.css';
 import { ChangeEvent, useState } from "react";
 
 interface SearchBarProps {
@@ -12,7 +12,7 @@ const SearchBar = ({ onSearchClick, initialValue = ''}: SearchBarProps) => {
   const [text, setText] = useState(initialValue);
 
   return (
-    <div className="search-bar-wrapper">
+    <div className={styles["search-bar-wrapper"]}>
       <TextField
         className="search-bar"
         label="Search field"

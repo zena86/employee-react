@@ -11,7 +11,7 @@ const Header = () => {
         <span>Home</span>
       </Link>
       <Link to={'/about/testParam'}>
-        <span>About</span>
+        <span>About 1</span>
       </Link>
       <Link to={'/contacts'}>
         <span>Contacts</span>
