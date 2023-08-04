@@ -7,6 +7,7 @@ import Contacts from './pages/Contacts';
 import Home from './pages/Home';
 import UserDetails from './pages/UserDetails';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import AddUser from './pages/AddUser';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: '/contacts',
     element: <Contacts />,
+  },
+  {
+    path: '/add-user',
+    element: <AddUser />,
   },
 ]);
 
@@ -50,7 +55,7 @@ function App() {
           </Toolbar>
         </AppBar>
       </Box>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </div>
   )
 }

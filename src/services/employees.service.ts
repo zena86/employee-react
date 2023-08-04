@@ -9,3 +9,7 @@ export function getEmployees(searchString: string): Promise<User[]> {
 export function getEmployeeById(employeeId: number): Promise<User> {
   return http.get<User>(`/employees/${employeeId}`).then((response: AxiosResponse<User>) => response.data);
 }
+
+export function createEmployee(employee: User): Promise<User> {
+  return http.post(`/employees`, employee);
+}
